@@ -1,0 +1,132 @@
+#include <stdio.h>
+
+int main(){
+    int marks1, marks2, marks3;
+    printf("Enter marks1: \n");
+    scanf("%d", &marks1);
+    printf("Enter marks2: \n");
+    scanf("%d", &marks2);
+    printf("Enter marks3: \n");
+    scanf("%d", &marks3);
+    printf("The marks are %d %d and %d\n", marks1, marks2, marks3);
+
+    if(marks1<33 || marks2<33 || marks3<33){
+        printf("You are failed due to less marks in individual subject(s)\n"); 
+    }
+    else if((marks1 + marks2 + marks3)/3 <40){
+        printf("You are failed due less percentage\n"); 
+    }
+    else{
+        printf("You are passed!");
+    }
+    return 0;
+}
+
+
+
+
+
+IMP 
+Tax Calculation code
+
+#include <stdio.h>
+
+int main(){
+    int income;
+    float tax=0; 
+    printf("Enter income: \n");
+    scanf("%d", &income);
+    if(income<=250000){
+        tax = 0;
+    }
+    else if(income>250000 && income<=500000){
+        tax = 0.05 * (income - 250000);
+    }
+    else if(income>500000 && income<=1000000){
+        tax = 0.05 * (500000 - 250000) + 0.2 * (income- 500000);
+    }
+    else {
+        tax = 0.05 * (500000 - 250000) + 0.2 * (1000000- 500000) + 0.3 * (income - 1000000);
+    }
+    printf("The total tax you need to pay is %.3f", tax);
+    return 0;
+}
+
+
+
+
+
+Leap Year Calculations 
+// if the entered year is divisible by 4 and is eqaul to 0 its a leap year ! 
+#include<stdio.h>
+
+int main(){
+    int year ;
+    printf("Enter the year : \n");
+    scanf("%d",&year);
+    
+    if (year%4 == 0){
+        printf("Its a leap year! \n");
+    }else {
+        printf("It is not a leap year!");
+    }
+    return 0;
+}
+
+
+
+
+
+ASCII Value : find if the user is giving a lower case or a upper case and give its ascii value 
+
+// the small case starts from a(97) to z(122)
+// imp ch>=97 && ch<=122 
+
+#include<stdio.h>
+
+int main(){
+    char ch;
+    printf("Enter the character : ");
+    scanf("%c",&ch);
+    
+    if (ch>=97 && ch<=122 ){
+        printf("Its a lower case and its asci value is %d\n",ch);
+    }
+        else {
+        printf("Its a upper case !");
+    }
+    return 0;
+}
+
+
+
+
+
+
+Find the greatest of all numbers 
+// there are 4 values we have to find out which is the greates values in that four 
+// it checks if A is greater than all the values then it prints 
+// the loop continues 
+
+#include<stdio.h>
+
+int main(){
+    int a =10 , b = 20 , c = 30 , d = 40;
+    
+    if(a>b && a>c && a>d){
+        printf("The gretest of all is %d",a);
+    }else if(b>a && b>c && b>d){
+        printf("The greatest of all is %d",b);
+    }else if(c>a && c>b && c>d){
+        printf("The greatest of all is %d",c);
+    } else if(d>a && d>b && d>c){
+        printf("The greatest of all is %d",d);
+    }
+    return 0;
+}
+
+
+
+
+
+
