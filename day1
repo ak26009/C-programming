@@ -1,0 +1,69 @@
+first code in C
+
+Variables
+1 variable is a container in C which we used to store some data .
+2 variables are case sensitive, there should not be any blank place in between the variables , underscore is valid , Special symbols are no valid 
+
+#include <stdio.h>
+
+int main() {
+    int a = 10; variable declaration 
+    int b=20;
+    int sum = a+b;
+    
+    printf("The op of this program is %d", sum);       here the %d is used for the v 
+
+    return 0;
+}
+
+op The op of this program is 30
+
+DATA TYPES
+
+#include <stdio.h>
+
+int main() {
+    
+    int a;
+    a = 10;
+    
+    float b ;
+    b = 1.4;
+    
+    char c;
+    c = 'A';
+    
+    printf();
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+    
+    int a;
+    a = 10;
+    
+    float b ;
+    b = 1.4;
+    
+    char c;
+    c = 'A';
+    
+    printf("The value of integer a is %d\n ", a );
+    printf("The value of integer b is %f\n ", b );
+    printf("The value of integer c is %c\n ", c );
+
+    return 0;
+}
+
+op - The value of integer a is 10
+ The value of integer b is 1.400000
+ The value of integer c is A
+
+
+
+
