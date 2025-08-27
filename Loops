@@ -1,0 +1,91 @@
+Basic Program for While loop
+
+// in this happy birthday is print until and unless the value of i iss 4  
+
+#include<stdio.h>
+
+int main(){
+    
+    int i = 0 ;
+    while(i<4){
+        printf("Happy Birthday!\n");
+        i = i+1;             // here we can also use i++ increment operator also. 
+                             // when the i value reaches to 4 it get out of the loop and the program end 
+    }
+    
+    return 0;
+}
+
+
+Basic practice code in while loop
+        FIRST
+#include <stdio.h>
+
+// from here we will get 0 to 10
+
+int main() {
+    int i = 0;
+    while(i<=10){
+        printf("%d \n",i);
+        i++;
+    }
+    
+    // from here we will get 10 to 0
+    i = 10;
+    while(i>=0){
+        printf("%d \n",i);
+        i--;
+    }
+    return 0;
+}
+
+      SECOND
+// In this code we have used += and whileloop 
+// It will add all the positive number from 1 to infinite, if we enter 0 it will break the loop and the execution will stop 
+#include <stdio.h>
+
+int main() {
+   int sum = 0 , number ;
+   
+   printf("Enter the positive value to add and 0 to stop\n");
+   
+   while(1){
+       printf("Enter the number = ");
+       scanf("%d",&number);
+       
+       if(number==0){
+           printf("You have entered 0\n");
+           break;
+       }
+       if(number>0){
+           sum +=number;
+       }
+    //   i++;
+   }
+    printf("The Value of positive number is %d",sum);
+    return 0;
+}
+
+
+
+
+
+Do-While Loop
+
+#include <stdio.h>
+
+// this code is to write the natural numbers by taking input from the user 
+
+int main() {
+    int n, i = 1;
+    printf("Enter the number = ");
+    scanf("%d",&n);
+    
+    do{
+        printf("the value on n is %d\n",i);
+        i++;
+    }while(i<=n);
+    return 0;
+}
+
+
