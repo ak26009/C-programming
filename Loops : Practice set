@@ -1,0 +1,120 @@
+Question 1
+write a program to print multiplication table of a given number n 
+
+#include <stdio.h>
+
+int main() {
+    int n ;
+    printf("Enter the number for what you want table for = ");
+    scanf("%d",&n);   // it will give table for the given n number 
+    for(int i=1 ; i<=12 ; i++){  
+        printf("%d x %d = %d\n",i,n,i*n);
+    }
+    return 0;
+}
+
+
+Question 2
+write a program to print multiplication table of a given number n in the reverse order  
+
+#include <stdio.h>
+
+int main() {
+    int n ;
+    printf("Enter the number for what you want table for = ");
+    scanf("%d",&n);        // here we only changed the statement from i =0 to i=10 that it means it will start from 10 and end at 1
+    for(int i=10 ; i; i--){  
+        printf("%d x %d = %d\n",i,n,i*n);
+    }
+    return 0;
+}
+
+
+Question 3 
+write a program to sum first 10 natural numbers using while loop
+
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    int sum = 0;
+    while(i<=10){
+        sum += i;
+        i++;
+    }
+    printf("First 10 Natural Numbers total= %d\n",sum);
+    return 0;
+}
+
+
+Question 4 
+write a program to sum first 10 natural numbers using  Do - while loop
+
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    int sum = 0;
+    do{
+        sum += i;
+        i++;
+    }while(i<=10);
+    printf("First 10 Natural Numbers total= %d\n",sum);
+    return 0;
+}
+
+
+Question 5 
+write a program to sum first 10 natural numbers using For loop
+
+#include <stdio.h>
+
+int main() {
+    
+    int sum = 0;
+    for(int i = 1 ; i<=1 ; i++){
+    sum += i;
+}
+    printf("First 10 Natural Numbers total= %d\n",sum);
+    return 0;
+}
+
+
+Question 6
+write a program for factorial using For loop
+
+#include <stdio.h>
+
+int main() {
+    int product = 1;
+    int n ;
+    printf("Enter the number for factorial = ");
+    scanf("%d",&n);
+    
+    for(int i=1 ; i<=n ; i++){
+        product *=i;
+    }
+    printf("the factorial of n is %d ",product);
+    return 0;
+}
+
+
+Question 6
+write a program to find out if the given number is prime or not
+#include <stdio.h>
+
+int main() {
+    int n = 7;
+    int prime = 0;
+    for(int i=2 ; i<n ; i++){
+        if(n%i == 0){
+            prime = 1;
+        }
+    }
+    if(prime){
+        printf("%d is a prime number ",n);
+    }else{
+        printf("it is not a prime number ");
+    }
+    return 0;
+}
