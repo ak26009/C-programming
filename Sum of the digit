@@ -1,0 +1,16 @@
+
+#include <stdio.h>
+
+int main() {
+   int sum = 0 ;
+   int rm ;
+   int a = 333;
+   while(a>0){
+    rm = a%10;
+    sum = sum + rm;
+    a = a/10;
+   }
+    printf("%d",sum);
+    return 0;
+}
+    
