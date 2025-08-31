@@ -1,0 +1,40 @@
+BASIC CODE OF POINTERS 
+
+#include<stdio.h>
+
+int main(){
+    int i = 12;
+    int* j = &i;  // here j is storing the address of i
+    printf("The address of i is %p\n",j);
+    printf("The address of i is %p\n",&i);
+    
+    printf("The value at address i is  %d\n", *(&i)); // HERE WE GET THE VALUE OF I THAT IS 12 
+    return 0 ;
+}
+
+
+
+
+SOME BASIC OF POINTERS 
+
+#include<stdio.h>
+
+int main(){
+    int i = 8;
+    int *j ;
+    j = &i; 
+    
+    printf("add i = %u\n",&i); // this shows the address of i 
+    printf("add i = %u\n",j); // this shows the adress of i as j = &i
+    printf("add j = %u\n",&j); //this shows the address of j
+    
+    printf("value i = %d\n",i); // this shows the value inside the i  
+    printf("value i = %d\n",*(&i)); // this shows the value inside the i 
+    printf("value i = %d\n",*j);// this shows the value inside the i  as j = &i
+    
+    return 0 ;
+}
+
+
+
+
