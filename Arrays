@@ -1,0 +1,91 @@
+
+Write a program to input values into an array and display them
+#include<stdio.h>
+int main(){
+
+int arr[5],i;
+
+for(i=0;i<5;i++){
+printf("Enter the values of arr[%d]\n",i);
+scanf("%d",&arr[i]);
+}
+for(i=0;i<5;i++){
+printf("%d\t",arr[i]);
+}
+}
+
+
+
+
+
+WAP TO to add 10 array elements
+#include<stdio.h>
+
+int main(){
+    int arr[10],i;
+    int sum = 0;
+    
+    for(i=0;i<10;i++){
+        printf("Enter the values arr[%d]\n",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    for(i=0;i<10;i++){
+        sum = sum+arr[i]; 
+    }
+    printf("%d\t",sum);
+ return 0;   
+}
+
+
+
+
+
+//WAP to multiply two 3X3 array and store the result in third array.
+
+#include<stdio.h>
+int main(){
+int a[3][3];
+int b[3][3];
+int result[3][3];
+
+int i,j;
+int k;
+
+for(i=0; i<3 ;i++){
+    for(j=0 ; j<3 ;j++){
+        printf("Enter the values of first matrix a\n [%d][%d]\n",i,j);
+        scanf("%d",&a[i][j]);
+    }
+}
+
+for(i=0; i<3 ;i++){
+    for(j=0 ; j<3 ;j++){
+        printf("Enter the values of first matrix b\n [%d][%d]\n",i,j);
+        scanf("%d",&b[i][j]);
+    }
+}
+
+for(i=0; i<3 ;i++){
+    for(j=0 ; j<3 ;j++){
+        result[i][j]=0; 
+    }
+}
+
+for(i=0; i<3 ;i++){
+    for(j=0 ; j<3 ;j++){
+        for(k=0 ; k<3 ;k++){
+            result[i][j] += a[i][k]*b[k][j];
+        }
+        
+    }
+}
+printf("Resultant Matrix");
+for(i=0; i<3 ;i++){
+    for(j=0 ; j<3 ;j++){
+        printf("%d\t",result[i][j]); 
+    }
+    printf("\n");
+}
+}
+
