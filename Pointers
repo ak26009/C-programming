@@ -1,4 +1,28 @@
-BASIC CODE OF POINTERS 
+// In this code we made a function which will change the value of a by 30 times 
+// &a <--- gives the adress of the variable 
+// *a <--- we can access or modify the data inside the variable 
+
+#include <stdio.h>
+
+int changeby30(int*a){
+    *a = *a*30;
+}
+int main() {
+    int a = 10;
+    printf("The value of a is %d\n",a);
+    
+    changeby30(&a);
+    printf("The value of a is %d\n",a);
+    
+    return 0;
+}
+
+
+
+
+
+
+BASIC CODE OF POINTERS
 
 #include<stdio.h>
 
