@@ -1,0 +1,56 @@
+
+AUTO STORAGE CLASS
+// They are created when a function is called and destroyed when the function ends. They don’t retain values between calls.
+#include <stdio.h>
+
+void demoAuto() {
+    auto int x = 0;   
+    x++;
+    printf("Auto variable value: %d\n", x);
+}
+
+int main() {
+    demoAuto();  
+    demoAuto();  
+    demoAuto();  
+    return 0;
+}
+
+
+
+
+REGISTER STORAGE CLASS
+// register requests the compiler to store variable in CPU registers for fast access (though modern compilers optimize this automatically)
+
+#include <stdio.h>
+
+int main() {
+    for (register int i = 1; i <= 5; i++) {
+        printf("Register variable as counter: %d\n", i);
+    }
+    return 0;
+}
+
+
+
+
+Static Storage Class
+//local variables retain their value across function calls.
+
+#include <stdio.h>
+
+void demoStatic() {
+    static int y = 0;   // static storage class
+    y++;
+    printf("Static variable value: %d\n", y);
+}
+
+int main() {
+    demoStatic();  // y = 1
+    demoStatic();  // y = 2
+    demoStatic();  // y = 3
+    return 0;
+}
+
+
+
