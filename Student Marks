@@ -1,52 +1,48 @@
-#include <stdio.h>
+#include<stdio.h>
+#define SUB 4
 
-#define NUM_SUBJECTS 4
-
-int main() {
+int main(){
+    
     int num_students;
-
-    // Prompt user for the number of students
-    printf("Enter the number of students: ");
-    scanf("%d", &num_students);
-
-    // Declare a 2D array to store marks
-    int marks[num_students][NUM_SUBJECTS];
-
-    // Prompt user to enter marks for each student and subject
-    for (int i = 0; i < num_students; i++) {
-        printf("\nEnter marks for Student %d:\n", i + 1);
-        for (int j = 0; j < NUM_SUBJECTS; j++) {
-            printf("Enter marks for Subject %d: ", j + 1);
-            scanf("%d", &marks[i][j]);
+    printf("Enter the number of students\n");
+    scanf("%d",&num_students);
+    
+    int marks[num_students][SUB];
+    
+    for(int i=0 ; i<num_students ;i++){
+        printf("Enter marks for student %d \n",i+1);
+        for(int j=0 ; j<SUB ; j++){
+            printf("Enter marks for subject %d ",j+1);
+            scanf("%d",&marks[i][j]);
         }
+    
     }
-
-    // Display the entire mark sheet in tabular format
+    
     printf("\n--- Mark Sheet ---\n");
-    printf("Student |");
-    for (int j = 0; j < NUM_SUBJECTS; j++) {
-        printf(" Subject %d |", j + 1);
+    printf("Student |\t");
+    for (int j = 0; j < SUB; j++) {    
+        printf(" Subject %d |\t", j + 1);
     }
     printf("\n");
+    
     for (int i = 0; i < num_students; i++) {
-        printf("%7d |", i + 1);
-        for (int j = 0; j < NUM_SUBJECTS; j++) {
-            printf("%9d |", marks[i][j]);
-        }
-        printf("\n");
+    printf("%d \t\t|", i + 1);
+    for (int j = 0; j < SUB; j++) {
+        printf("%d \t\t|", marks[i][j]);
     }
+    printf("\n");
+}
 
-    // Display subject number and highest marks scored
-    printf("\n--- Highest Marks in Each Subject ---\n");
-    for (int j = 0; j < NUM_SUBJECTS; j++) {
-        int highest_mark = 0;
-        for (int i = 0; i < num_students; i++) {
-            if (marks[i][j] > highest_mark) {
-                highest_mark = marks[i][j];
+
+    for(int j=0; j<SUB ;j++){
+        int highest_marks = 0;
+        for(int i =0; i<num_students;i++){
+            if(marks[i][j]>highest_marks){
+                highest_marks = marks[i][j];
             }
         }
-        printf("Subject %d: Highest Mark = %d\n", j + 1, highest_mark);
+        printf("Subject %d: Highest Mark = %d\n", j + 1, highest_marks);
     }
-
+    
     return 0;
 }
