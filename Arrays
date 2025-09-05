@@ -1,3 +1,61 @@
+CREATE AN ARRAY OF 10 NUMBERS, VERIFY USING POINTER ARITHMETHIC THAT ptr+3 POINTS TO THE THIRD ELEMENT AND THE PTR IS POINTING TO THE FIRST ELEMENT
+#include <stdio.h>
+
+int main() {
+    int a[]={1,2,3,4,5,6,7,8,9,10};
+    
+    // *ptr = a <-- this means *ptr is storing the address of the first element that is 1
+
+    int*ptr = a;
+
+    printf("The value of ptr %u is %d",ptr+3 ,*(ptr+3));
+
+    // the ptr+3 is giving the address of element 4 and *(ptr+3) is giving the value that is 4
+    
+    return 0;
+}
+
+
+
+
+
+
+How to access array using pointers 
+
+#include <stdio.h>
+
+int main() {
+    
+    // accesssig array using pointers
+    int marks[5];
+    
+    
+    // to assign the pointer to index 0
+    // in c we dont need to say &marks[0] if we write &marks it will point to the 0th index only
+    int* ptr = &marks[0];
+    
+    printf("Enter the marks");
+    
+    for(int i=0 ; i<5 ;i++){
+        scanf("%d ",&marks[i]);
+    }
+    
+    for(int i=0 ; i<5 ;i++){
+        printf("The address %u of marks are %d\n",i,marks[i]);
+    }
+    for(int i =0 ; i<5 ;i++){
+     printf("marks is %d",*(ptr+i));
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
 
 Write a program to input values into an array and display them
 #include<stdio.h>
