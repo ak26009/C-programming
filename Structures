@@ -1,0 +1,24 @@
+// Structure to pointer 
+#include <stdio.h>
+#include <string.h>
+
+struct employee{
+    int code;
+    float salary;
+    char name[10];
+};
+int main() {
+    struct employee e1;
+    struct employee* ptr;
+    //here ptr is stroing the address of e1 using pointer to structure
+    ptr = &e1;
+    
+    e1.code =5421;
+    e1.salary = 25000.65;
+    strcpy(e1.name,"Atharva");
+    // this is using dereference operator
+    printf("%s",(*ptr).name);
+    // this is using arrow operator
+    printf("%s",ptr->name);
+    return 0;
+}
