@@ -22,3 +22,46 @@ int main() {
     printf("%s",ptr->name);
     return 0;
 }
+
+
+
+
+
+
+
+//CRETE A TWO DIMENSIONAL VECTOR USING STRUCTURES
+struct vector{
+  int i;
+  int j;
+};
+
+int main() {
+    struct vector a ={1,2};
+    printf("the vector is %di+%dj",a.i,a.j);
+
+    return 0;
+}
+
+
+
+
+
+
+// write a function sumvector which returns the sum of two vectors passed to it , the vectors should be 2 d.
+struct vector{
+  int i;
+  int j;
+};
+
+struct vector sumvector(struct vector v1,struct vector v2){
+    struct vector v3 = {(v1.i+v2.i) ,(v1.j+v2.j)};
+    return v3;
+}
+
+int main() {
+    struct vector v1 ={1,2};
+    struct vector v2 ={5,6};
+    struct vector v3 = sumvector(v1,v2);
+    printf("the sum of 2vector is %di+%dj\n",v3.i,v3.j);
+    return 0;
+}
