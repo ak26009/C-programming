@@ -165,6 +165,41 @@ int main() {
 
 
 
+//Demonstrate function pointers by writing a calculator program (add, subtract, multiply, divide).
+#include <stdio.h>
+
+// Functions for calculator
+int add(int a, int b) { return a + b; }
+int sub(int a, int b) { return a - b; }
+int mul(int a, int b) { return a * b; }
+int divi(int a, int b) { return b != 0 ? a / b : 0; } // avoid divide by zero
+
+int main() {
+    int a, b, choice, result;
+
+    // Array of function pointers
+    int (*calc[4])(int, int) = {add, sub, mul, divi};
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Choose operation:\n");
+    printf("0. Add\n1. Subtract\n2. Multiply\n3. Divide\n");
+    scanf("%d", &choice);
+
+    if (choice >= 0 && choice < 4) {
+        result = calc[choice](a, b);  // call chosen function
+        printf("Result = %d\n", result);
+    } else {
+        printf("Invalid choice\n");
+    }
+
+    return 0;
+}
+
+
+
+
 
 
 
