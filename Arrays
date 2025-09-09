@@ -16,6 +16,39 @@ int main() {
 }
 
 
+#include <stdio.h>
+//TO FIND THE DUPLICATES IN THE ARRAY
+int main() {
+    int n;
+    int i,j;
+    int dupli = 0;
+    
+    printf("Enter the numbers store in an array ");
+    scanf("%d",&n);
+    
+    int arr[n];
+    for(i = 0; i<n ;i++){
+        printf("Enter elements %d: ",i);
+        scanf("%d",&arr[i]);
+    }
+    for(i=0 ; i<n ; i++)
+    {
+        for(j=i+1 ; j<n ; j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                dupli++;
+                break;
+            }    
+        }
+    }
+    printf("Total number of duplicate elements found in the array: %d\n", dupli);
+
+    return 0;
+}
+
+
+
 
 
 
