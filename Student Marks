@@ -46,3 +46,75 @@ int main(){
     
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+#define STUDENTS 10
+#define SUBJECTS 4
+
+int main() {
+    int marks[STUDENTS][SUBJECTS];
+    int i, j;
+
+    // Input marks
+    printf("Enter marks for %d students in %d subjects:\n", STUDENTS, SUBJECTS);
+    for (i = 0; i < STUDENTS; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        for (j = 0; j < SUBJECTS; j++) {
+            printf("  Subject %d: ", j + 1);
+            scanf("%d", &marks[i][j]);
+        }
+    }
+
+    // Display marksheet
+    printf("\nMarks Entered\n");
+    printf("-------------------------------------------------\n");
+    printf("Student\t");
+    for (j = 0; j < SUBJECTS; j++) {
+        printf("Subject %d\t", j + 1);
+    }
+    printf("\n-------------------------------------------------\n");
+
+    for (i = 0; i < STUDENTS; i++) {
+        printf("%d\t", i + 1);
+        for (j = 0; j < SUBJECTS; j++) {
+            printf("%d\t\t", marks[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Find highest marks in each subject
+    printf("\nHighest Marks in Each Subject:\n");
+    for (j = 0; j < SUBJECTS; j++) {
+        int max = marks[0][j]; // assume first student's marks is highest
+        for (i = 1; i < STUDENTS; i++) {
+            if (marks[i][j] > max) {
+                max = marks[i][j];
+            }
+        }
+        printf("Subject %d: %d\n", j + 1, max);
+    }
+
+    return 0;
+}
+
