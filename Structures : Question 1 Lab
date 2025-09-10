@@ -97,3 +97,48 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+// define a struct complex use typedef to read two complex numbers and perform addition and substraction of these two complex numbers 
+#include<stdio.h>
+
+typedef struct{
+  float real;
+  float imag;
+  
+}complex;
+
+int main()
+{
+    complex c1,c2,sum;
+    
+    printf("Enter the first complex number value a+bi ");
+    scanf("%f %f",&c1.real,&c1.imag);
+    
+    printf("Enter the second complex number value a+bi ");
+    
+    scanf("%f %f",&c2.real,&c2.imag);
+    
+    sum.real = c1.real+c2.real;
+    sum.imag = c1.imag+c2.imag;
+
+    printf("The total sum is %.2f+%.2fj\n",sum.real,sum.imag);
+    
+    
+    sum.real = c1.real-c2.real;
+    sum.imag = c1.imag-c2.imag;
+    printf("The total substraction is %.2f-%.2fj",sum.real,sum.imag);
+    
+    
+}
+
+
+
