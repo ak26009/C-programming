@@ -24,7 +24,7 @@ int main() {
     {
 
     printf("\nChose the operation\n");
-    printf("1.Add student records\n 2.View all student records\n 3.maximum score\n 4.minimum score\n \nEnter the number for operation\n");
+    printf(" 1.Add student records\n 2.View all student records\n 3.maximum score\n 4.minimum score\n \nEnter the number for operation\n");
     scanf("%d",&operation);
     switch (operation)
     {
@@ -69,7 +69,7 @@ int main() {
             if (st[i].ExamScore > max) {
             max = st[i].ExamScore;
             maxIndex = i;
-            }
+                }
             }
             printf("Student with highest score: %s (%.2f)\n", st[maxIndex].name, max);
 
@@ -77,8 +77,20 @@ int main() {
 
     case 4:
             printf("\nMinimum marks\n");
+            float min = st[0].ExamScore;
+            int minIndex = 0;
+
+            for (int i = 1; i < n; i++) {
+            if (st[i].ExamScore < min) {
+            min = st[i].ExamScore;
+            minIndex = i;
+                }
+            }
+            printf("Student with highest score: %s (%.2f)\n", st[minIndex].name, min);
+            printf("\nMinimum marks\n");
     
     default:
+            printf("Enter a valid operation");
         break;
     }
     }while(operation<=4);
