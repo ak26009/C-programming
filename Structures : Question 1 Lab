@@ -62,10 +62,17 @@ int main() {
 
     case 3:
             printf("\nMaximum marks\n");
-            int max_score = 0;
-            if(max_score){
+            float max = st[0].ExamScore;
+            int maxIndex = 0;
 
+            for (int i = 1; i < n; i++) {
+            if (st[i].ExamScore > max) {
+            max = st[i].ExamScore;
+            maxIndex = i;
             }
+            }
+            printf("Student with highest score: %s (%.2f)\n", st[maxIndex].name, max);
+
         break;
 
     case 4:
