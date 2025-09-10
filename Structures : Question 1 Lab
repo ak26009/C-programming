@@ -142,3 +142,63 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NESTED STRUCTURE 
+#include<stdio.h>
+
+
+struct address{
+    char city[50];
+    int pincode;
+};
+
+struct student{
+    int roll;
+    char name[10];
+    struct address addr;// nested structure -> the above structure is called here and we have given name as addr
+};
+int main(){
+    struct student s1 = {1,"Atharva",{"hyd",500001}};
+    
+    printf("roll %d\n",s1.roll);
+    printf("name %s\n",s1.name);
+    printf("city %s\n",s1.addr.city);//to access the nested attributes we need to use the nested name.attribute
+    printf("pincode %d\n",s1.addr.pincode);
+    
+}
+
