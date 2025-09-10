@@ -1,3 +1,5 @@
+
+q1
 #include<stdio.h>
 
 struct student
@@ -17,9 +19,6 @@ int main() {
     struct student st[n];
     
    int operation;
-
-    
-    
     do 
     {
 
@@ -105,7 +104,7 @@ int main() {
 
 
 
-
+q2
 
 // define a struct complex use typedef to read two complex numbers and perform addition and substraction of these two complex numbers 
 #include<stdio.h>
@@ -141,6 +140,45 @@ int main()
 }
 
 
+
+q3
+
+
+#include<stdio.h>
+
+
+struct employe{
+    int id;
+    char name[20];
+};
+
+int main(){
+    struct employe e[3];
+    struct employe* ptr = e;
+    
+    for(int i=0 ; i<3 ; i++){
+        printf("Enter employee details %d \n",i+1);
+        
+        
+        printf("Enter id = ");
+        scanf("%d",&(ptr+i)->id);
+        
+        printf("Enter name = ");
+        scanf("%s",(ptr+i)->id);
+    
+    }
+    
+    for(int i=0 ; i<3 ; i++){
+        printf("Employee %d:\n", i + 1);
+    
+        printf("id = %d\n",(ptr+i)->id);
+    
+        printf("Enter name = %s",(ptr+i)->name);
+        
+            }
+    return 0;
+    
+}
 
 
 
