@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 //a crt a txt file name student_info.txt and write the following details into it name , age course ,roll, marks of 5 students
@@ -9,7 +8,7 @@ struct student{
 	char course[20];
 	int RollNo ;
 	int marks;	
-}
+};
 
 int main() {
     FILE* fp1;
@@ -19,60 +18,86 @@ int main() {
     
     if (fp1 == NULL) {
         printf("The file is not opened.");
+        return 1;  // exit if file couldn't be opened
     }
     
-    struct student arr[5];
+    struct student s[5];
     
     for(int i=0 ; i<5 ; i++){
     	printf("\nEnter the details of student %d\n",i+1);
     	
     	//name > string
     	printf("Enter Name = \n");
-    	scanf("%s",arr[i].name);
+    	scanf("%s",s[i].name);
     	
     	//age > int
     	printf("Enter age = \n");
-    	scanf("%d",arr[i].age);
+    	scanf("%d",&s[i].age);  // FIXED: Added &
     	
     	//course > char
     	printf("Enter course = \n");
-    	scanf("%s",arr[i].course);
+    	scanf("%s",s[i].course);
     	
     	//rollno > int
     	printf("Enter RollNo = \n");
-    	scanf("%d",arr[i].RollNo);
+    	scanf("%d",&s[i].RollNo);  // FIXED: Added &
     	
     	//marks > int
     	printf("Enter marks = \n");
-    	scanf("%d",arr[i].marks);
+    	scanf("%d",&s[i].marks);  // FIXED: Added &
     	
-    	fprintf(fp1, "%s %d %s %d %d\n", arr[i].name, arr[i].age, arr[i].course, arr[i].RollNo, arr[i].marks);
+    	fprintf(fp1, "%s %d %s %d %d\n", s[i].name, s[i].age, s[i].course, s[i].RollNo, s[i].marks);
     }
-   
-   //b after writing the data to the file reopen the file in read mode and display the contents
-   	
-   	for(int i=0 ; i<5 ; i++){
+
+    fclose(fp1);  // FIXED: Must close after writing
+
+    //b after writing the data to the file reopen the file in read mode and display the contents
+    fp1 = fopen("student_info.txt", "r");  // FIXED: Reopen in read mode
+    if (fp1 == NULL) {
+        printf("The file could not be opened for reading.\n");
+        return 1;
+    }
+
+    for(int i=0 ; i<5 ; i++){
+        // FIXED: Added & for int values
+   	    fscanf(fp1, "%s %d %s %d %d", s[i].name, &s[i].age, s[i].course, &s[i].RollNo, &s[i].marks);
    	
     	printf("\nDetails of student %d\n",i+1);
     	
     	//name > string
-    	printf("Name = %s\n",arr[i].name);
+    	printf("Name = %s\n",s[i].name);
    	
     	//age > int
-    	printf("Age = %d\n",arr[i].age);
+    	printf("Age = %d\n",s[i].age);
     	
     	//course > char
-    	printf("course = %s\n",arr[i].course);
+    	printf("course = %s\n",s[i].course);
     	
     	//rollno > int
-    	printf("RollNo = %d\n",arr[i].RollNo);
+    	printf("RollNo = %d\n",s[i].RollNo);
     	
     	//marks > int
-    	printf("Marks = %d\n",arr[i].marks);
-    	
-    	fscanf(fp1, "%s %d %s %d %d\n", arr[i].name, arr[i].age, arr[i].course, arr[i].RollNo, arr[i].marks);
-    	
+    	printf("Marks = %d\n",s[i].marks);
    }
-   fpclose(fp1);
-    return 0;
+
+   fclose(fp1);
+   
+   //c calculate the average marks of the students and write it to a new file called average_marks.txt
+   fp2 = fopen("average_marks.txt", "w");
+   if (fp2 == NULL) {
+       printf("Unable to create average_marks.txt\n");
+       return 1;
+   }
+
+   int sum = 0;
+   for (int i = 0; i < 5; i++) {
+       sum += s[i].marks;
+   }
+
+   float average = sum / 5.0;
+
+   fprintf(fp2, "Average marks of the students: %.2f\n", average);
+   fclose(fp2);
+
+   return 0;
 }
