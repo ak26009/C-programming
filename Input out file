@@ -1,0 +1,78 @@
+
+#include <stdio.h>
+
+//a crt a txt file name student_info.txt and write the following details into it name , age course ,roll, marks of 5 students
+
+struct student{
+	char name[20];
+	int age;
+	char course[20];
+	int RollNo ;
+	int marks;	
+}
+
+int main() {
+    FILE* fp1;
+    FILE* fp2;
+    
+    fp1 = fopen("student_info.txt", "w");
+    
+    if (fp1 == NULL) {
+        printf("The file is not opened.");
+    }
+    
+    struct student arr[5];
+    
+    for(int i=0 ; i<5 ; i++){
+    	printf("\nEnter the details of student %d\n",i+1);
+    	
+    	//name > string
+    	printf("Enter Name = \n");
+    	scanf("%s",arr[i].name);
+    	
+    	//age > int
+    	printf("Enter age = \n");
+    	scanf("%d",arr[i].age);
+    	
+    	//course > char
+    	printf("Enter course = \n");
+    	scanf("%s",arr[i].course);
+    	
+    	//rollno > int
+    	printf("Enter RollNo = \n");
+    	scanf("%d",arr[i].RollNo);
+    	
+    	//marks > int
+    	printf("Enter marks = \n");
+    	scanf("%d",arr[i].marks);
+    	
+    	fprintf(fp1, "%s %d %s %d %d\n", arr[i].name, arr[i].age, arr[i].course, arr[i].RollNo, arr[i].marks);
+    }
+   
+   //b after writing the data to the file reopen the file in read mode and display the contents
+   	
+   	for(int i=0 ; i<5 ; i++){
+   	
+    	printf("\nDetails of student %d\n",i+1);
+    	
+    	//name > string
+    	printf("Name = %s\n",arr[i].name);
+   	
+    	//age > int
+    	printf("Age = %d\n",arr[i].age);
+    	
+    	//course > char
+    	printf("course = %s\n",arr[i].course);
+    	
+    	//rollno > int
+    	printf("RollNo = %d\n",arr[i].RollNo);
+    	
+    	//marks > int
+    	printf("Marks = %d\n",arr[i].marks);
+    	
+    	fscanf(fp1, "%s %d %s %d %d\n", arr[i].name, arr[i].age, arr[i].course, arr[i].RollNo, arr[i].marks);
+    	
+   }
+   fpclose(fp1);
+    return 0;
+}
