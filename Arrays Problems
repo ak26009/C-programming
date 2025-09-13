@@ -1,5 +1,5 @@
 
- 1. Writea program to read your name into a character array. Print the name along with the length of your name and sizeof the array in which name is stored. 
+ 1. Write a program to read your name into a character array. Print the name along with the length of your name and sizeof the array in which name is stored. 
 #include <stdio.h>
 
 
@@ -503,3 +503,4 @@ int main()
     
     return 0;
 }
+
