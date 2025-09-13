@@ -1,0 +1,505 @@
+
+ 1. Writea program to read your name into a character array. Print the name along with the length of your name and sizeof the array in which name is stored. 
+#include <stdio.h>
+
+
+int main()
+{	//wap to read ur name into a char , print the name along with the length of ur name and size of the array
+	char name[20];
+
+
+	printf("Enter your name");
+	scanf("%[^\n]",name);
+
+	int length = strlen(name);
+	printf("The length of the array is %d\n",length);
+
+	int size_of = sizeof(name);
+	printf("The size of the array is %d\n",size_of);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+2.  /* Usescanf function to reada string of characters (into character type array called text)               
+including alphabets,digits,blanks, tabs etc except newline character.Write a loop that will               
+examine each character in a character-type array and determine how many of the             
+characters are letters,how many are digits,how many are blanks and how many are tabs.                
+Assume that text contains 80 characters. */
+
+#include <stdio.h>
+
+int main()
+{ 
+    char text[80];
+    char ch;
+    int letters =0;
+    int digit = 0,blanks=0,tabs=0;
+    
+    printf("Enter the array");
+	scanf("%[^\n]",text);
+	
+	
+    for(int i=0; i<80 ; i++){
+        ch = text[i];    
+        
+        if((ch>='A' && ch<='Z')||(ch >='a'&& ch <='z')){
+            letters++;
+        }
+        if(ch==' '){
+            blanks++;
+        }
+        if(ch>='0'&&ch<='9')
+        {
+            digit++;
+        }
+        if(ch=='\t'){
+            tabs++;
+        }
+    }
+
+	printf("The letters are %d\n",letters);
+	printf("The blanks are %d\n",blanks);
+	printf("The digits are %d\n",digit);
+	printf("The tabs are %d\n",tabs);
+	return 0;
+}
+
+
+
+
+
+
+// 3. Write a program to print array in reverse order.
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+    int arr[n];
+    int reverse=0;
+    int remain;
+    
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d",&arr[i]);
+    }
+    
+    for (int i = n-1; i >=0 ; i--) {
+        printf("%d",arr[i]);
+    }
+    
+    return 0;
+}
+
+
+
+// 4.Write a program to print array in reverse order using print array function are reverse function
+
+
+#include <stdio.h>
+
+void printarry(int arr[],int n){
+    for(int i=0 ; i<n ; i++){
+        printf("%d\n",arr[i]);
+    }
+    printf(" ");
+    
+}
+void reversearray(int arr[],int n){
+    int temp;
+    
+    for(int i=0 ; i<n/2 ; i++){
+        temp = arr[i];
+        arr[i] = arr[n-i-1];
+        arr[n-i-1] = temp;
+    }
+}
+
+int main()
+{
+    int n,i;
+    printf("Enter the value of array : ");
+    scanf("%d",&n);
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d",&arr[i]);
+    }
+    printarry(arr,n);
+    reversearray(arr,n);
+    printarry(arr,n);
+
+    
+    return 0;
+}
+
+
+
+
+
+
+
+//5.  Program to Calculate Sum and Average of an array
+#include <stdio.h>
+
+int main()
+{
+    int n,i;
+    printf("Enter the value of array : ");
+    scanf("%d",&n);
+    int arr[n];
+    int sum = 0;
+    int average;
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d",&arr[i]);
+    }
+    
+    for (int i = 0; i < n; i++) {
+        sum = sum+arr[i];
+       
+    }
+    
+    printf("The total sum is %d \n",sum);
+    
+    average = sum/n;
+       
+    printf("The total average is %d \n",average);
+    
+
+    
+    return 0;
+}
+
+
+
+
+
+
+// 6. Program to find the largest, smallest element of an array 
+#include <stdio.h>
+
+int main()
+{
+    int n,i;
+    printf("Enter the value of array : ");
+    scanf("%d",&n);
+    int arr[n];
+    
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    
+    int largest = arr[0];
+    
+    for(int i=0 ; i<n ; i++)
+    {
+        if(largest < arr[i])
+        {
+            largest = arr[i];
+        }
+        
+    }
+    printf("The largest is %d \n",largest);
+    
+    for(int i=0 ; i<n ; i++)
+    {
+        if(largest > arr[i])
+        {
+            largest = arr[i];
+        }
+        
+    }
+    printf("The smallest is %d \n",largest);
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+// 7. Program to find the largest, smallest, second largest and second smallest element of an array 
+#include <stdio.h>
+#include <limits.h> // for INT_MIN and INT_MAX
+
+int main()
+{
+    int n;
+    printf("Enter the value of array : ");
+    scanf("%d", &n);
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // find largest and smallest first
+    int largest = arr[0];
+    int smallest = arr[0];
+    
+     
+    for (int i = 1; i < n; i++) {
+        
+        // largest
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+        // minimum
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+    printf("The largest is %d \n", largest);
+    printf("The smallest is %d \n", smallest);
+
+    
+    int second_largest = INT_MIN;
+    int second_smallest = INT_MAX;
+
+    // find second largest and second smallest
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != largest && arr[i] > second_largest) {
+            second_largest = arr[i];
+        }
+        if (arr[i] != smallest && arr[i] < second_smallest) {
+            second_smallest = arr[i];
+        }
+    }
+
+    printf("The second largest is %d \n", second_largest);
+    printf("The second smallest is %d \n", second_smallest);
+
+    return 0;
+}
+
+
+
+
+
+
+
+// 8. Insertion of an element in an array at a specific position.
+#include<stdio.h>
+
+int main()
+{
+    
+    int pos ; // here pos = at what position you want to enter the element.
+    int elem;// here elem = element you want to add.
+    int n; // here n is storing how many element were going to insert
+    
+    printf("Enter how many element you want: ");
+    scanf("%d",&n);
+    
+    int arr[100]; // here we are giving extra space for insertion
+    // if dont asign an extra space here the n value wont be change and it will throw some garbage value
+    
+    printf("Enter the %d element\n",n);
+    for(int i=0 ; i<n ;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    printf("\nEnter the new element : ");
+    scanf("%d",&elem);
+    
+    printf("\nEnter at what position you want to add : ");
+    scanf("%d",&pos);
+    
+    for(int i=n ; i>pos ;i--){
+        arr[i] = arr[i-1];
+    }
+    
+    arr[pos] = elem; // a t p we are adding new element at the position
+    n++; // and increasing the size of the array.
+    
+    for(int i=0 ; i<n ; i++){
+        printf("%d\t",arr[i]);   
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+9. Deletion of an element in an array.
+
+#include<stdio.h>
+
+int main()
+{
+    int del;// here del = element you want to delete.
+    int n; // here n is storing how many element were going to insert
+    
+    printf("Enter how many element you want: ");
+    scanf("%d",&n);
+    
+    int arr[100]; // here we are giving extra space for insertion / deletion, helps to change the current array without any disturbance to another elements
+    // if dont asign an extra space here the n value wont be change and it will throw some garbage value
+    
+    printf("Enter the %d element\n",n);
+    for(int i=0 ; i<n ;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    printf("Enter which element you want to delete");
+    scanf("%d",&del);
+    
+    int pos = -1;// here the position = -1 , bcz if there is no element at -1 position, array start from 0 to nth
+    
+    
+    for(int i=0 ; i<n ; i++){
+        if(arr[i]==del){
+            pos = i;
+        }
+    }
+    
+    if(pos == -1){
+        printf("Enter a valid element you want to delete ");
+    }else {
+        // here we are shifting elements to the left side 
+     
+        for(int i = pos ; i<n-1 ; i++){
+            arr[i] = arr[i+1];
+        }
+    }
+    n--;
+    
+    for(int i=0 ; i<n ; i++){
+        printf("%d\t",arr[i]);   
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+10.  Program to Put Even & Odd elements of an array in two separate arrays 
+
+#include<stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter how many element you want: ");
+    scanf("%d",&n);
+    
+    int arr[100]; // here we are giving extra space for insertion / deletion, helps to change the current array without any disturbance to another elements
+    // if dont asign an extra space here the n value wont be change and it will throw some garbage value
+    
+    int odd[100];
+    int even[100];
+    
+    int ocount = 0;
+    int ecount = 0;
+    
+    // Input elements from the user
+    printf("Enter the %d element\n",n);
+    for(int i=0 ; i<n ;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    for(int i=0 ; i<n ; i++){
+        
+        // even number condition
+        if(arr[i]%2 == 0){
+            
+            // we are storing the even number inside the even[] array and keeping the count of even number ecount++ 
+            even[ecount]= arr[i];
+            ecount++;
+        }
+        else{
+            // we are storing the odd number inside the odd[] array and keeping the count of odd number ocount++ 
+            odd[ocount]=arr[i];
+            ocount++;
+        }
+    }
+    
+    // to print even numbers 
+    for(int i=0 ; i<ecount ; i++){
+        printf("%d\n",even[i]);   
+    }
+    
+    // to print odd numbers 
+    for(int i=0 ; i<ocount ; i++){
+        printf("%d\n",odd[i]);   
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+11.  Program to concatenate two arrays 
+
+#include<stdio.h>
+
+int main()
+{
+    int arr1[100];
+    int arr2[100];
+    int arr3[100];
+
+    int n1;
+    printf("Enter how many element you want in n1: ");
+    scanf("%d",&n1);
+    
+    // Input elements from the user
+    printf("Enter the %d element\n",n1);
+    for(int i=0 ; i<n1 ;i++){
+        scanf("%d",&arr1[i]);
+    }
+    
+    int n2;
+    printf("Enter how many element you want in n2: ");
+    scanf("%d",&n2);
+    
+    // Input elements from the user
+    printf("Enter the %d element\n",n2);
+    for(int i=0 ; i<n2 ;i++){
+        scanf("%d",&arr2[i]);
+    }
+    
+    for(int i=0 ; i<n1 ; i++){
+        arr3[i] = arr1[i];
+    }
+    
+    
+    for(int i=0 ; i<n2 ; i++){
+        arr3[n1+i] = arr2[i];
+    }
+    
+    int n3 = n1+n2;
+    
+    for(int i=0 ; i<n3 ; i++){
+        printf("%d\t",arr3[i]);
+    }
+    
+    return 0;
+}
