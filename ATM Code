@@ -39,6 +39,8 @@ case 3 : printf("Your balance is %d\n",balance);
         printf("Please enter correct pass\n");
         try++;
 
+
+
  }      
         }while(try > 3);
 }
