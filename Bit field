@@ -1,0 +1,24 @@
+#include<stdio.h>
+#pragma pack(1)
+
+struct bitfeld {
+  int a : 6; // maximum value assign to it is 63
+  int b : 4; // maximum value assign to it is 15
+  int c : 6; // maximum value assign to it is 63
+} v;
+
+struct bitfeld1 {
+  int a : 8; // maximum value assign it can store 255
+  int b : 6; // maximum value assign it can store 63
+  int c : 5; // maximum value assign it can store 31
+} v;
+
+int main() {
+  v.a = 64;
+  v.b = 6;
+  v.c = 5;
+
+  printf("The size of struct bitfield in bytes is %u \n", sizeof(struct bitfeld));
+  printf("%d %d %d",v.a,v.b,v.c);
+  return 0;
+}
