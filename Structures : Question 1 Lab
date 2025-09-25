@@ -12,8 +12,7 @@ struct student
 
 int main() {
     int n;
-    int i = 4;
-
+    
     printf("Enter the number of student : ");
     scanf("%d",&n);
     struct student st[n];
