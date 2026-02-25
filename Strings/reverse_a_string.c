@@ -42,3 +42,32 @@ int main() {
     printf("Reverse String is %s",str);
     return 0;
 }
+
+
+
+
+
+
+// Without string length function
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char str[50];
+    int len = 0;
+    char temp ;
+    
+    printf("Enter a string ");
+    fgets(str,sizeof(str),stdin);
+    
+    while(str[len]!='\0'){
+        len++;
+    }
+    for(int i=0,j=len-1 ; i<j ; i++,j--){
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+    printf("Reverse String is %s",str);
+    return 0;
+}
