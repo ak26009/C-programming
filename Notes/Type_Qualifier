@@ -1,0 +1,5 @@
+In embedded firmware, const and volatile are not just C language features they directly affect how the compiler generates machine code and how your program interacts with hardware.
+
+## 1. const Qualifier
+const tells the compiler:
+"This object should not be modified through this variable."
