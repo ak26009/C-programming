@@ -10,6 +10,14 @@ What is the output of:
   int a = 5;
   printf("%d %d %d", a++, ++a, a);
 How do you swap two numbers without using a third variable?
+  #include<stdio.h>
+  int main(){
+    int a = 10 , b = 20;
+    a = a+b;
+    b = a-b;
+    a = a-b;
+  }
+  
 How do you find whether a number is even or odd without using %?
 How do you find whether a particular bit is set?
 How do you set, clear, toggle, and check a bit?
