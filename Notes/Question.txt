@@ -1,7 +1,10 @@
-
 C Programming / Logic
+
 What is the difference between = and ==?
+ans. The main difference between = and == is that the "=" presents of assignment operator and it directly assigns it and the "==" represent the comparison operator, which gives the boolean expression like true and false.
+
 What is the difference between ++i and i++?
+
 What happens if you write i = i++ + ++i?
 What is the output of:
   int a = 5;
