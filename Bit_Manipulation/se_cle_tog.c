@@ -43,3 +43,49 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+// USING SWITCH CASE
+
+#include<stdio.h>
+
+int main(){
+    
+    unsigned int no,pos;
+    int op,result;
+
+    printf("Enter the number and pos ");
+    scanf("%d %d",&no,&pos);
+
+    printf("Enter the operation you want to on the number\n");
+    printf("11.SET BIT\n 2.Clear BIT\n 3.TOGGLE BIT\n");
+    scanf("%d",&op);
+    
+
+        switch(op){
+        case 1:
+            no |= (1<<pos);
+            printf("The Bit is set %d\n",no);
+            break;
+
+        case 2:
+            no &= ~(1<<pos);
+            printf("The Bit is clear %d\n",no);
+            break;
+        
+        case 3:
+            no ^= (1<<pos);
+            printf("The Bit is toggled %d\n",no);
+            break;
+        
+        default:
+            printf("Invalid operation");
+
+    }
+    
+}
