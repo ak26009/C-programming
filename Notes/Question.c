@@ -61,6 +61,8 @@ int *ptr;
 This is called as a dangling pointer when the pointer is declared but it is not assigned then it is called as dangling pointer, bcz it can misbehave
 
 What happens if you dereference a NULL pointer?
+It becomes an error as "segmentation fault" or a "NULL POINTER EXCEPTION"as we are trying to access the undefined memory.
+
 What is the difference between:
 int *p;
 const int *p;
