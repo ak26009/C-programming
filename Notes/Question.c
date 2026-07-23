@@ -64,11 +64,14 @@ What happens if you dereference a NULL pointer?
 It becomes an error as "segmentation fault" or a "NULL POINTER EXCEPTION"as we are trying to access the undefined memory.
 
 What is the difference between:
-int *p;
-const int *p;
-int *const p;
-const int *const p;
+int *p; it is a pointer declared but not initialized.
+const int *p; Pointer to a constant value, we can change the adress but we cannot play with the value.
+int *const p; Constant pointer to a variable value, we cannot change the adress but we can change the value.
+const int *const p; constant pointer and constant value. we canot edit value and adress.
+
 What is a pointer to a pointer?
+A pointer pointing to a pointer, i.e when a pointer is holding the address of another pointer is called as pointer to pointer.
+
 What is the difference between an array and a pointer?
 What happens when you increment a pointer?
 What is a function pointer?
