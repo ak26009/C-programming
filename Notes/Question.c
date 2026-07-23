@@ -19,6 +19,12 @@ How do you swap two numbers without using a third variable?
   }
   
 How do you find whether a number is even or odd without using %?
+if(num & 1){
+  printf("The number is odd");
+}else{
+  printf("The number is ever");
+  }
+
 How do you find whether a particular bit is set?
 How do you set, clear, toggle, and check a bit?
 How do you count the number of 1s in a binary number?
