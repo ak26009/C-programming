@@ -41,10 +41,25 @@ What is the difference between || and |?
 What is the difference between ~ and !?
 
 Pointers
+
 What is a pointer?
+int *ptr = a;
+*ptr is a variable which is holding the address of another varible that is a.
+
 What is a NULL pointer?
+int *ptr = NULL; 
+a pointer ppointing to the null adress is called as null pointer.
+
 What is a dangling pointer?
+int *ptr;
+This is called as a dangling pointer when the pointer is initialized but it is not assigned then it is called as dangling pointer, bcz it can misbehave.
+
 What is a wild pointer?
+int *ptr = a;
+free(ptr);
+ptr = malloc(n*sizeof(int);
+The above is called as a wild pointer when we free it and the next second we try to assign the size or tring to use it, it is called as wild pointer.
+
 What happens if you dereference a NULL pointer?
 What is the difference between:
 int *p;
