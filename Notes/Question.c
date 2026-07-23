@@ -29,8 +29,12 @@ How do you find whether a particular bit is set?
   if(no &= (1<<pos));
 
 How do you set, clear, toggle, and check a bit?
+set no |= (1<<pos);
+clear no &= ~(1<<pos);
+toggle no ^= (1<<pos);
 
 How do you count the number of 1s in a binary number?
+
 How do you reverse the bits of an integer?
 What is the difference between && and &?
 What is the difference between || and |?
