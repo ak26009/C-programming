@@ -78,8 +78,13 @@ What happens when you increment a pointer?
 It moves to the next memory address which it is pointing for a example if the pointer is pointing to the integer(0x04) then it will move to 0x08 to its next corresponding address because int holds 4bytes.
 
 What is a function pointer?
+A pointer passing to a function is called as fuction pointer.
+
 Can you pass a structure to a function using a pointer?
+yes we can pass a structure to a duction using a pointer there is a special variable called as (->) arrow operator.
+
 Why do we use -> with a structure pointer?
+yes we can use it!
 
 Memory
 Where are local variables stored?
