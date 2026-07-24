@@ -73,7 +73,10 @@ What is a pointer to a pointer?
 A pointer pointing to a pointer, i.e when a pointer is holding the address of another pointer is called as pointer to pointer.
 
 What is the difference between an array and a pointer?
+
 What happens when you increment a pointer?
+It moves to the next memory address which it is pointing for a example if the pointer is pointing to the integer(0x04) then it will move to 0x08 to its next corresponding address because int holds 4bytes.
+
 What is a function pointer?
 Can you pass a structure to a function using a pointer?
 Why do we use -> with a structure pointer?
