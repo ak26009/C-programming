@@ -95,8 +95,13 @@ Where are global variables stored?
 The global variables which are initialized is stored in data segment and when not initiazlzed then it is stored in .bss segment.
 
 Where are static variables stored?
+The static variables are stored in data when initialized and in .bss segment when uninitialized.
+
 What is the difference between stack and heap?
+The main difference between Stack and Heap is that stack grows downwards and heap grows upwards, when we use dyanamically memory allocation at that time we use heap and when we initialize direct in code that time we use stack.
+
 What causes a segmentation fault?
+
 What is a memory leak?
 What is stack overflow?
 What happens if you access an array outside its bounds?
