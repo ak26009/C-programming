@@ -87,8 +87,13 @@ Why do we use -> with a structure pointer?
 yes we can use it!
 
 Memory
+
 Where are local variables stored?
+The local variable is stored in stack segment, when the local variable is used with static keyword then it is stored in data segment.
+
 Where are global variables stored?
+The global variables which are initialized is stored in data segment and when not initiazlzed then it is stored in .bss segment.
+
 Where are static variables stored?
 What is the difference between stack and heap?
 What causes a segmentation fault?
