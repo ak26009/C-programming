@@ -101,13 +101,23 @@ What is the difference between stack and heap?
 The main difference between Stack and Heap is that stack grows downwards and heap grows upwards, when we use dyanamically memory allocation at that time we use heap and when we initialize direct in code that time we use stack.
 
 What causes a segmentation fault?
+The main casue of segmentation fault is that when we try to access the freed memory or trying to put some data into uninitialized variable of working with dma leads to the segmentation fault.
 
 What is a memory leak?
+
 What is stack overflow?
+
 What happens if you access an array outside its bounds?
+It leads to segmentation fault.
+
 What is the difference between initialized and uninitialized global variables?
+The initialized global variables are stored in .data segment and the uninitialized gloabal variable are stored in the bss segment. the global variables are directly initialized to zero if it is not assigned wih some value.
+
 What are .text, .data, .bss, heap, and stack sections?
+All these terms are called as memory allocation in C programming, the .txt holds the arguments and function call, the .data hold the initialize variable and the .bss segment holds the uninitialized variable, the .heap section is used for DMA, and the stack is used for local variables and for faster response.
+
 static, const, volatile
+
 What is a static variable?
 What is the scope of a static global variable?
 Can you access a static variable from another .c file?
