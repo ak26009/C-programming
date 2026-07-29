@@ -54,11 +54,11 @@ What is a dangling pointer?
 int *ptr = a;
 free(ptr);
 ptr = malloc(n*sizeof(int);
-The above is called as a wild pointer when we free it and the next second we try to assign the size or tring to use it,the best prevention is to use a NULL. it is called as wild pointer.
+The above is called as a dangling pointer when we free it and the next second we try to assign the size or tring to use it,the best prevention is to use a NULL. it is called as wild pointer.
 
 What is a wild pointer?
 int *ptr;
-This is called as a dangling pointer when the pointer is declared but it is not assigned then it is called as dangling pointer, bcz it can misbehave
+This is called as a wild pointer when the pointer is declared but it is not assigned then it is called as dangling pointer, bcz it can misbehave
 
 What happens if you dereference a NULL pointer?
 It becomes an error as "segmentation fault" or a "NULL POINTER EXCEPTION"as we are trying to access the undefined memory.
@@ -84,7 +84,7 @@ Can you pass a structure to a function using a pointer?
 yes we can pass a structure to a duction using a pointer there is a special variable called as (->) arrow operator.
 
 Why do we use -> with a structure pointer?
-yes we can use it!
+It is called as -> arrow pointer.
 
 Memory
 
