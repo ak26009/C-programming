@@ -114,7 +114,7 @@ What is the difference between initialized and uninitialized global variables?
 The initialized global variables are stored in .data segment and the uninitialized gloabal variable are stored in the bss segment. the global variables are directly initialized to zero if it is not assigned wih some value.
 
 What are .text, .data, .bss, heap, and stack sections?
-All these terms are called as memory allocation in C programming, the .txt holds the arguments and function call, the .data hold the initialize variable and the .bss segment holds the uninitialized variable, the .heap section is used for DMA, and the stack is used for local variables and for faster response.
+All these terms are called as memory layout in C programming, the .txt holds the arguments and function call, the .data hold the initialize variable and the .bss segment holds the uninitialized variable, the .heap section is used for DMA, and the stack is used for local variables and for faster response.
 
 static, const, volatile
 
