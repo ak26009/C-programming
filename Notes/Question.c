@@ -132,9 +132,10 @@ Can you access a static variable from another .c file?
 No we cannot 
 
 What is the difference between static and extern?
-
+The major difference between the static and extern is that static restricts the variable to local and file only, but when we use extern keyword that time the variable is allowed to global files.
 
 What is const?
+
 What is volatile?
 Why is volatile important in embedded systems?
 Where would you use volatile?
