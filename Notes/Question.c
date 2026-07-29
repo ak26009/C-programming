@@ -107,7 +107,8 @@ What is a memory leak?
 If i use dyanmic memory allocation and ask os to give the space and even after using that space im not telling the system that use of that allocated memory is done and keeping it like in use at that time we can say there is a memory leak.
 
 What is stack overflow?
-
+So when we do a recursive function, and we dont add the base condition that time we can say the stack is overflow, or we are passing a huge local array then also stack overflow can happen.
+and by default it leads to segmentation fault.
 
 What happens if you access an array outside its bounds?
 It leads to segmentation fault.
@@ -121,9 +122,18 @@ All these terms are called as memory layout in C programming, the .txt holds the
 static, const, volatile
 
 What is a static variable?
+It is an attribute of storage class which tells the scope of variable, life time of the variable, initial value, so when we use static key word we tell the compiler this variable is alony accessible in the same file.
+we cannot share this variable out the file, it has constraint and its initial value is zero.
+
 What is the scope of a static global variable?
+local or file.
+
 Can you access a static variable from another .c file?
+No we cannot 
+
 What is the difference between static and extern?
+
+
 What is const?
 What is volatile?
 Why is volatile important in embedded systems?
