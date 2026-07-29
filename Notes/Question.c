@@ -104,8 +104,10 @@ What causes a segmentation fault?
 The main casue of segmentation fault is that when we try to access the freed memory or trying to put some data into uninitialized variable of working with dma leads to the segmentation fault.
 
 What is a memory leak?
+If i use dyanmic memory allocation and ask os to give the space and even after using that space im not telling the system that use of that allocated memory is done and keeping it like in use at that time we can say there is a memory leak.
 
 What is stack overflow?
+
 
 What happens if you access an array outside its bounds?
 It leads to segmentation fault.
