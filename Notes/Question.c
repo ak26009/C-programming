@@ -6,9 +6,12 @@ ans. The main difference between = and == is that the "=" presents of assignment
 What is the difference between ++i and i++?
 
 What happens if you write i = i++ + ++i?
+
 What is the output of:
   int a = 5;
   printf("%d %d %d", a++, ++a, a);
+The ans is undefined it all depends on the compiler how it is handling the vairiable from right to left or left to right. 
+
 How do you swap two numbers without using a third variable?
   #include<stdio.h>
   int main(){
