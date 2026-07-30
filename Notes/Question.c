@@ -37,6 +37,24 @@ clear no &= ~(1<<pos);
 toggle no ^= (1<<pos);
 
 How do you count the number of 1s in a binary number?
+We can do this using Brian's Algorithum
+#include <stdio.h>
+int noofone(int no){
+    int count = 0;
+    while(no>0){
+        no = no & (no-1);
+        count++;
+    }
+    return count;
+}
+int main() {
+    int no = 54;
+    int ofone = noofone(no);
+    printf("The no of one's in binary number %d\n",ofone);
+    return 0;
+}
+
+
 
 How do you reverse the bits of an integer?
 What is the difference between && and &?
