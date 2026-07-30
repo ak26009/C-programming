@@ -156,6 +156,7 @@ What is the difference between static and extern?
 The major difference between the static and extern is that static restricts the variable to local and file only, but when we use extern keyword that time the variable is allowed to global files.
 
 What is const?
+It tells the compiler that the variable or the value is read only value, we cannot change it after initialization it is .rodata 
 
 What is volatile?
 Why is volatile important in embedded systems?
