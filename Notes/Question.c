@@ -159,6 +159,8 @@ What is const?
 It tells the compiler that the variable or the value is read only value, we cannot change it after initialization it is .rodata 
 
 What is volatile?
+The volatile keyword tells the compiler that the variable can be change at any moment so that always read it from the memory if it calls.
+
 Why is volatile important in embedded systems?
 Where would you use volatile?
 Can a variable be both const and volatile?
